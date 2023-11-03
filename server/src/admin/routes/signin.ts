@@ -12,7 +12,7 @@ router.post('/admin/signin', (req, res)=>{
   // and store int in cookie
   const {email, password} = req.body;
 
-  if ((email !== process.env.USERNAME) || (password !== process.env.PASSWORD)) {
+  if ((email !=='vishu@gmail.com') || (password !== 'vishu')) {
     res.render('adminPages/signin', {error: 'Invalid credentials'});
   }
 
@@ -20,7 +20,7 @@ router.post('/admin/signin', (req, res)=>{
   const userJwt = jwt.sign({
     email: email,
   },
-  process.env.JWT_KEY!,
+  'vishu',
   );
 
   // store it on session object

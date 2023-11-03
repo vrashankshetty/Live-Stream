@@ -12,7 +12,7 @@ router.get('/admin/stream', (req, res)=>{
   try {
     jwt.verify(
             req.session!.jwt,
-            process.env.JWT_KEY!,
+            'vishu'!,
     );
     res.render('adminPages/stream');
   } catch (error) {
